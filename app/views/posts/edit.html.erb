@@ -1,0 +1,19 @@
+<div class="main posts-new">
+    <div class="container"> 
+        <h2 class="form-heading">投稿を編集する</h2>
+        <div class="form">
+            <div class="form-body">
+            <% @post.errors.full_messages.each do |message| %>
+                <div class="form-error">
+                    <%= message %>
+                </div>
+            <% end %>
+            <%= form_tag("/posts/#{@post.id}/edit") do %>
+                <p>投稿</p>
+                <input name="content" value="<%= @post.content%>">
+                <input type="submit" value="編集する">
+            <% end %>
+            </div>
+        </div>
+    </div>
+</div>
